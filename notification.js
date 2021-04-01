@@ -20,6 +20,8 @@ function solve(fullDate, diff = 3) {
 
     if (currentDate.getFullYear() > +dateYMD[0]) {
         time = `${monthNames[+dateYMD[1] - 1]} ${dateYMD[0]}` // March 2019
+    } else if (currentDate.getMonth() + 1 > (+dateYMD[1])) {
+        time = `${dateYMD[2]} ${monthNames[+dateYMD[1] - 1]}`
     } else if ((currentDate.getMonth() + 1 >= (+dateYMD[1])) && ((currentDate.getDate() - +dateYMD[2]) > 0)) {
         time = `${dateYMD[2]} ${monthNames[+dateYMD[1] - 1]}` // 23 March
     } else if

@@ -1,4 +1,5 @@
 function solve(fullDate) {
+    debugger
     if (!fullDate) return
 
     const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "June",
@@ -35,7 +36,10 @@ function solve(fullDate) {
 
         time = `${monthNames[messageMonth]} ${messageYear}` // March 2019
 
-    } else if ((currentMonth >= messageMonth) && ((currentDay - messageDay) > 0)) {
+    } else if (currentMonth > messageMonth) {
+        time = `${messageDay > 9 ? messageDay : '0' + messageDay} ${monthNames[messageMonth]} ${messageHours > 9 ? messageHours : '0' + messageHours}:${messageMinutes > 9 ? messageMinutes : '0' + messageMinutes}` // 23 March 17:22
+    }
+    else if ((currentMonth === messageMonth) && ((currentDay - messageDay) > 0)) {
 
         time = `${messageDay > 9 ? messageDay : '0' + messageDay} ${monthNames[messageMonth]} ${messageHours > 9 ? messageHours : '0' + messageHours}:${messageMinutes > 9 ? messageMinutes : '0' + messageMinutes}` // 23 March 17:22
 
@@ -50,4 +54,4 @@ function solve(fullDate) {
 
 }
 
-solve("2021-03-31 18:26:55.000000")// 21:27
+solve("2021-03-31 20:27:59.000000")// 21:27

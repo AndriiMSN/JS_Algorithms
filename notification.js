@@ -49,3 +49,4 @@ function solve(fullDate, diff = 3) {
 }
 
 console.log(solve("2021-03-31 11:21:40.000000"))
+
